@@ -3,6 +3,10 @@ import styled from "styled-components";
 const TitleSmall = `
     font-size: 10px;
     color: white;
+
+    &:hover {
+        font-size: 100px;
+    }
 `;
 
 const TitleLarge = `
@@ -22,6 +26,8 @@ export const Container = styled.div`
 
 export const TitleWrap = styled(Container)`
   ${Title} {
+    transition: all 2s;
+
     ${({ small }) => (small ? TitleSmall : TitleLarge)}
   }
 `;
