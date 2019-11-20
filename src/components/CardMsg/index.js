@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Title, TitleWrap } from "./card-msg.styles";
+import {
+  Container,
+  Card,
+  UserPhoto,
+  UserName,
+  UserMsg,
+  Photo
+} from "./card-msg.styles";
+import { testNameToKey } from "jest-snapshot/build/utils";
 
 export default function CardMsg() {
-  const [isSmall, setIsSmall] = useState(false);
+  // const [isSmall, setIsSmall] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => setIsSmall(!isSmall), 2000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => setIsSmall(!isSmall), 2000);
 
-    return () => clearInterval(interval);
-  }, [isSmall]);
+  //   return () => clearInterval(interval);
+  // }, [isSmall]);
 
   return (
     <Container>
-      <Title>Filipe</Title>
-      <TitleWrap small={isSmall}>
-        <Title>Vinizera</Title>
-      </TitleWrap>
+      <Card>
+        <UserPhoto>
+          <Photo src={'./Assets/teste.png'}/>
+        </UserPhoto>
+        <UserName>Vinizera</UserName>
+        <UserMsg>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
+          leo sit amet nulla semper iaculis. Aliquam ac enim neque. Fusce id
+          vehicula tellus, et pretium nulla. #RSXP2019
+        </UserMsg>
+      </Card>
     </Container>
   );
 }
