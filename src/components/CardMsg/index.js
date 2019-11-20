@@ -6,7 +6,7 @@ export default function CardMsg() {
   return (
     <Container>
       <Title>Filipe</Title>
-      <TitleWrap>
+      <TitleWrap small>
         <Title>Vinizera</Title>
       </TitleWrap>
     </Container>
