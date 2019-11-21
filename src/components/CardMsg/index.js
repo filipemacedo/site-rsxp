@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import {
   Container,
@@ -9,21 +9,17 @@ import {
   Photo
 } from "./card-msg.styles";
 
-export default function CardMsg() {
+export default function CardMsg({ text, userScreenName, userImage }) {
   const [isSelected, setIsSelected] = useState(false);
 
   return (
     <Container>
       <Card isSelected={isSelected} onClick={() => setIsSelected(!isSelected)}>
         <UserPhoto>
-          <Photo src={"./assets/teste.png"} />
+          <Photo src={userImage} />
         </UserPhoto>
-        <UserName>Vinizera</UserName>
-        <UserMsg>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at
-          leo sit amet nulla semper iaculis. Aliquam ac enim neque. Fusce id
-          vehicula tellus, et pretium nulla. #RSXP2019
-        </UserMsg>
+        <UserName>{userScreenName}</UserName>
+        <UserMsg>{text}</UserMsg>
       </Card>
     </Container>
   );

@@ -50,6 +50,7 @@ export const UserName = styled.h3`
 export const Photo = styled.img`
   width: 75px;
   height: 75px;
+  border-radius: 50%;
 `;
 
 export const UserPhoto = styled.div`
