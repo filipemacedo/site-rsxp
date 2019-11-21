@@ -15,6 +15,10 @@ const fetchTweets = async setTweets => {
   } catch (error) {}
 };
 
+/**
+ * This hook is responsible
+ * for fetch tweets and set on state
+ */
 export function useTweets() {
   const [tweets, setTweets] = useState([]);
 
