@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/assets/fonts/SourceSansPro-Light.woff2') format('woff2'),
+      url('/assets/fonts/SourceSansPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/assets/fonts/SourceSansPro-Bold.woff2') format('woff2'),
+      url('/assets/fonts/SourceSansPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+

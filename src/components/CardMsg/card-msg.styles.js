@@ -43,6 +43,8 @@ export const UserName = styled.h3`
   font-weight: bold;
   font-size: 32px;
   color: #00f5ff;
+  margin: 0;
+  padding: 0;
 `;
 
 export const Photo = styled.img`
@@ -70,13 +72,26 @@ export const UserMsg = styled.p`
   font-size: 27px;
   line-height: 33px;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+`;
+
+const CardSelectedStyle = `
+  position: absolute;
+  transition: translate 1s;
+  transform: translate(50%, 50%);
+`;
+
+const CardStyle = `
+ box-shadow: 0px 5px 10px #000;
+ position: relative;
 `;
 
 export const Card = styled.div`
   border-radius: 20px;
   background: #252429;
-  box-shadow: 0px 5px 10px #000;
   padding: 30px 70px;
   box-sizing: border-box;
-  position: relative;
+
+  ${({ isSelected }) => (isSelected ? CardSelectedStyle : CardStyle)}
 `;

@@ -10,19 +10,13 @@ import {
 } from "./card-msg.styles";
 
 export default function CardMsg() {
-  // const [isSmall, setIsSmall] = useState(false);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => setIsSmall(!isSmall), 2000);
-
-  //   return () => clearInterval(interval);
-  // }, [isSmall]);
+  const [isSelected, setIsSelected] = useState(false);
 
   return (
     <Container>
-      <Card>
+      <Card isSelected={isSelected} onClick={() => setIsSelected(!isSelected)}>
         <UserPhoto>
-          <Photo src={"./Assets/teste.png"} />
+          <Photo src={"./assets/teste.png"} />
         </UserPhoto>
         <UserName>Vinizera</UserName>
         <UserMsg>
