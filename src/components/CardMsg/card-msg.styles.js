@@ -77,14 +77,44 @@ export const UserMsg = styled.p`
 `;
 
 const CardSelectedStyle = `
-  position: absolute;
-  transition: translate 1s;
-  transform: translate(50%, 50%);
+  z-index: 999;
+  animation-name: selected;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  box-shadow: 0px 20px 40px rgba(0,0,0,0.6);
+}
+
+@keyframes selected {
+  0% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0; 
+    transform: scale(0);
+  }
+  60% {
+    opacity: 0; 
+    transform: scale(1);
+    z-index: 999;
+  }
+  100% {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 1; 
+    transform: scale(0.75);
+    z-index: 999;
+  }
+}
 `;
 
 const CardStyle = `
- box-shadow: 0px 5px 10px #000;
- position: relative;
+  box-shadow: 0px 5px 10px #000;
+  position: relative;
 `;
 
 export const Card = styled.div`
