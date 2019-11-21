@@ -8,7 +8,6 @@ import {
   UserMsg,
   Photo
 } from "./card-msg.styles";
-import { testNameToKey } from "jest-snapshot/build/utils";
 
 export default function CardMsg() {
   // const [isSmall, setIsSmall] = useState(false);
@@ -23,7 +22,7 @@ export default function CardMsg() {
     <Container>
       <Card>
         <UserPhoto>
-          <Photo src={'./Assets/teste.png'}/>
+          <Photo src={"./Assets/teste.png"} />
         </UserPhoto>
         <UserName>Vinizera</UserName>
         <UserMsg>

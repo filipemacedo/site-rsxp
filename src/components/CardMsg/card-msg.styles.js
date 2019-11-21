@@ -38,10 +38,39 @@ export const Container = styled.div`
   box-sizing: border-box;
 `;
 
-export const UserName = styled.div``;
-export const UserPhoto = styled.div``;
-export const Photo = styled.img``;
-export const UserMsg = styled.div``;
+export const UserName = styled.h3`
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 32px;
+  color: #00f5ff;
+`;
+
+export const Photo = styled.img`
+  width: 75px;
+  height: 75px;
+`;
+
+export const UserPhoto = styled.div`
+  position: absolute;
+  width: 87px;
+  height: 87px;
+  background: #3a3840;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  left: -43px;
+  top: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const UserMsg = styled.p`
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  font-size: 27px;
+  line-height: 33px;
+  color: #ffffff;
+`;
 
 export const Card = styled.div`
   border-radius: 20px;
@@ -50,34 +79,4 @@ export const Card = styled.div`
   padding: 30px 70px;
   box-sizing: border-box;
   position: relative;
-  ${UserPhoto} {
-    position: absolute;
-    width: 87px;
-    height: 87px;
-    background: #3a3840;
-    border-radius: 50%;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-    left: -43px;
-    top: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    ${Photo} {
-      width: 75px;
-      height: 75px;
-    }
-  }
-  ${UserName} {
-    font-family: "Source Sans Pro";
-    font-weight: bold;
-    font-size: 32px;
-    color: #00f5ff;
-  }
-  ${UserMsg} {
-    font-family: "Source Sans Pro";
-    font-weight: 300;
-    font-size: 27px;
-    line-height: 33px;
-    color: #ffffff;
-  }
 `;
