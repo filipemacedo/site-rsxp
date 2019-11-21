@@ -12,9 +12,13 @@ export const Wrapper = styled.div`
 `;
 
 export const CardGrid = styled.div`
-  padding: 43px 90px;
-  box-sizing: border-box;
-  display: grid;
-  grid-gap: 40px 80px;
-  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  // padding: 43px 90px;
+  // box-sizing: border-box;
+  // display: grid;
+  // grid-gap: 40px 80px;
+  // grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  columns: 3 300px;
+  columns-gap: 5px;
+  width:80%;
+  margin: 0 auto;
 `;

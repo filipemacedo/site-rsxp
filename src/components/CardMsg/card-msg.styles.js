@@ -33,9 +33,13 @@ import styled from "styled-components";
 // `;
 
 export const Container = styled.div`
-  position: relative;
-  width: 1fr;
-  box-sizing: border-box;
+  // position: relative;
+  // display: block;
+  width: 99%;
+  // min-width: 400px;
+  // height: max-content;
+  // box-sizing: border-box;
+  margin: 15px 5px 5px 0px;
 `;
 
 export const UserName = styled.h3`
@@ -78,36 +82,45 @@ export const UserMsg = styled.p`
 `;
 
 const CardSelectedStyle = `
-  z-index: 999;
   animation-name: selected;
-  animation-duration: 0.5s;
+  animation-duration: 5s;
   animation-fill-mode: forwards;
   box-shadow: 0px 20px 40px rgba(0,0,0,0.6);
 }
 
 @keyframes selected {
   0% { 
+    position: relative;
     opacity: 1; 
     transform: scale(1);
   }
   50% { 
+    position: relative;
+    opacity: 0; 
+    transform: scale(0);
+  }
+  55% {
+    position: fixed;
     opacity: 0; 
     transform: scale(0);
   }
   60% {
-    opacity: 0; 
-    transform: scale(1);
+    transform: scale(1.6);
     z-index: 999;
-  }
+    width: 60%;
+    height: max-content;
+    }
   100% {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 60%;
+    height: max-content;
     margin: auto;
     opacity: 1; 
-    transform: scale(0.75);
+    transform: scale(1.4);
     z-index: 999;
   }
 }
