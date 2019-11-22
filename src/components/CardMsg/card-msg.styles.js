@@ -1,37 +1,5 @@
 import styled from "styled-components";
 
-// const TitleSmall = `
-//     font-size: 10px;
-//     color: white;
-
-//     &:hover {
-//         font-size: 100px;
-//     }
-// `;
-
-// const TitleLarge = `
-//     font-size: 100px;
-//     color: black
-// `;
-
-// export const Title = styled.h1.attrs({ className: "titulo" })`
-//   font-size: 100px;
-// `;
-
-// export const Container = styled.div`
-//   width: 100px;
-//   height: 100px;
-//   background: red;
-// `;
-
-// export const TitleWrap = styled(Container)`
-//   ${Title} {
-//     transition: all 2s;
-
-//     ${({ small }) => (small ? TitleSmall : TitleLarge)}
-//   }
-// `;
-
 export const Container = styled.div`
   // position: relative;
   // display: block;
@@ -81,50 +49,7 @@ export const UserMsg = styled.p`
   padding: 0;
 `;
 
-const CardSelectedStyle = `
-  animation-name: selected;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  box-shadow: 0px 20px 40px rgba(0,0,0,0.6);
-}
-
-@keyframes selected {
-  0% { 
-    position: relative;
-    opacity: 1; 
-    transform: scale(1);
-  }
-  50% { 
-    position: relative;
-    opacity: 0; 
-    transform: scale(0);
-  }
-  55% {
-    position: fixed;
-    opacity: 0; 
-    transform: scale(0);
-  }
-  60% {
-    transform: scale(1.6);
-    z-index: 999;
-    width: 60%;
-    height: max-content;
-    }
-  100% {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 60%;
-    height: max-content;
-    margin: auto;
-    opacity: 1; 
-    transform: scale(1.4);
-    z-index: 999;
-  }
-}
-`;
+const CardSelectedStyle = ``;
 
 const CardStyle = `
   box-shadow: 0px 5px 10px #000;
@@ -133,9 +58,11 @@ const CardStyle = `
 
 export const Card = styled.div`
   border-radius: 20px;
+  position: relative;
   background: #252429;
   padding: 30px 70px;
   box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 1);
 
-  ${({ isSelected }) => (isSelected ? CardSelectedStyle : CardStyle)}
+  /* ${({ isSelected }) => (isSelected ? CardSelectedStyle : CardStyle)} */
 `;

@@ -9,12 +9,25 @@ import {
   Photo
 } from "./card-msg.styles";
 
-export default function CardMsg({ text, userScreenName, userImage }) {
+const CardMsg = ({
+  userImage,
+  userScreenName,
+  text,
+  className,
+  setShowModal,
+  showModal
+}) => {
   const [isSelected, setIsSelected] = useState(false);
 
   return (
-    <Container>
-      <Card isSelected={isSelected} onClick={() => setIsSelected(!isSelected)}>
+    <Container className={className}>
+      <Card
+        // isSelected={isSelected}
+        onClick={() => {
+          // setIsSelected(!isSelected);
+          setShowModal(!showModal);
+        }}
+      >
         <UserPhoto>
           <Photo src={userImage} />
         </UserPhoto>
@@ -23,4 +36,6 @@ export default function CardMsg({ text, userScreenName, userImage }) {
       </Card>
     </Container>
   );
-}
+};
+
+export default CardMsg;

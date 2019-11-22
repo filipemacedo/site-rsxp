@@ -19,6 +19,6 @@ export const CardGrid = styled.div`
   // grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
   columns: 3 300px;
   columns-gap: 5px;
-  width:80%;
+  width: 80%;
   margin: 0 auto;
 `;
