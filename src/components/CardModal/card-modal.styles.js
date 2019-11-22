@@ -27,9 +27,9 @@ const ShowStyle = `
 
 const HideStyle = `
     z-index: 9999;
-    transition: all 0.4s ease;
+    transition: all 250ms ease;
     opacity: 0;
-    animation: hide 400ms forwards;
+    animation: hide 250ms forwards;
     .selected {
         animation-name: unselected;
         animation-duration: 400ms;
