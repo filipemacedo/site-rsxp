@@ -6,7 +6,7 @@ import CardMsg from "../CardMsg";
 export default function CardModal({ setShowModal, showModal }) {
   console.log(showModal)
   return (
-    <Container show={showModal}>
+    <Container show={showModal} onClick={() => setShowModal(false)}>
       <Modal
         show={showModal}
         setShowModal={setShowModal}
