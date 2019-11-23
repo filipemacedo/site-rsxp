@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useToggleModal } from "../../hooks/toggle-modal.hook";
-
+import { Store } from "../../store/config/config";
+import { setTweetInformations } from "../../store/modules/modal/actions";
 import {
   Container,
   Card,
@@ -9,8 +10,6 @@ import {
   UserMsg,
   Photo
 } from "./card-msg.styles";
-import { Store } from "../../store/config/config";
-import { setTweetInformations } from "../../store/modules/modal/actions";
 
 const CardMsg = ({
   userImage,
