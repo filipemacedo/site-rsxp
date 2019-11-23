@@ -4,8 +4,7 @@ import { Container, Modal } from "./card-modal.styles";
 import CardMsg from "../CardMsg";
 
 export default function CardModal({ setShowModal, showModal }) {
-  console.log(showModal);
-
+  console.log(showModal)
   return (
     <Container show={showModal}>
       <Modal

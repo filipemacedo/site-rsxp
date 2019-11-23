@@ -9,8 +9,8 @@ import CardModal from "../../components/CardModal";
 
 export default function App() {
   const [tweets, setTweets] = useTweets();
-  const [showModal, setShowModal] = useState(false);
-
+  const [showModal, setShowModal] = useState(true);
+  console.log(tweets);
   const addNewTweet = tweet => setTweets([tweet, ...tweets]);
 
   useOnNewTweet({ addNewTweet, tweets });
