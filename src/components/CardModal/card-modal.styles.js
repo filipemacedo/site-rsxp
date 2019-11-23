@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import CardMsg from "../CardMsg";
-import CardModal from ".";
 
 const ShowStyle = `
     z-index: 999999;
