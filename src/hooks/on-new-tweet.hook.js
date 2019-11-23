@@ -10,19 +10,8 @@ import socket from "../socket";
  * @param {object[]} tweets
  */
 export function useOnNewTweet({ addNewTweet, tweets }) {
-  const listenerCallbackToAddTweet = ({ tweet }) => {
-    const { text, user } = tweet;
-
-    const {
-      screen_name: userScreenName,
-      profile_image_url_https: userImage
-    } = user;
-
-    return addNewTweet({ userScreenName, userImage, text });
-  };
-
   useEffect(() => {
-    onNewTweet(listenerCallbackToAddTweet);
+    onNewTweet(({ tweet }) => addNewTweet(tweet));
 
     return () => socket.removeAllListeners();
   }, [tweets]);

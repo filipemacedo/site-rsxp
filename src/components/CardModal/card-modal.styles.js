@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import CardMsg from "../CardMsg";
-import CardModal from ".";
 
 const ShowStyle = `
     z-index: 999999;
@@ -76,7 +75,7 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.8);
   transition: all 1s;
 
-  ${({ show }) => (show ? ShowStyle : HideStyle)}
+  ${({ isOpened }) => (isOpened ? ShowStyle : HideStyle)}
 `;
 
 export const Modal = styled(CardMsg).attrs({ className: "selected" })`
