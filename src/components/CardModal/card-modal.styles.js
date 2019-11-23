@@ -3,8 +3,9 @@ import CardMsg from "../CardMsg";
 import CardModal from ".";
 
 const ShowStyle = `
-    z-index: 9999;
+    z-index: 999999;
     transition: opacity 0.4s ease;
+    top: 0;
     opacity: 1;
     .selected {
         animation-name: selected;
@@ -26,9 +27,10 @@ const ShowStyle = `
 `;
 
 const HideStyle = `
-    z-index: 9999;
+    z-index: 999999;
     transition: all 250ms ease;
     opacity: 0;
+    top: 0;
     animation: hide 250ms forwards;
     .selected {
         animation-name: unselected;
@@ -62,9 +64,12 @@ const HideStyle = `
 `;
 
 export const Container = styled.div`
+  z-index: 999999;
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   position: fixed;
