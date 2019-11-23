@@ -1,21 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Container, Modal } from "./card-modal.styles";
-import CardMsg from "../CardMsg";
+import { useToggleModal } from "../../hooks/toggle-modal.hook";
+import { Store } from "../../store/config/config";
 
-export default function CardModal({ setShowModal, showModal }) {
-  console.log(showModal)
+export default function CardModal() {
+  const [isOpened, toggleStatusModal] = useToggleModal();
+  const [state] = useContext(Store);
+
+  const { modal } = state;
+  const { tweetInformations } = modal;
+
   return (
-    <Container show={showModal} onClick={() => setShowModal(false)}>
-      <Modal
-        show={showModal}
-        setShowModal={setShowModal}
-        showModal={showModal}
-        text="OLOCOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-        userScreenName="Vinizera"
-        userImage="https://pbs.twimg.com/profile_images/890312612155621382/0ozPVHm9_normal.jpg"
-      >
-      </Modal>
+    <Container isOpened={isOpened} onClick={() => toggleStatusModal(false)}>
+      <Modal openModalOnClick={false} {...tweetInformations}></Modal>
     </Container>
   );
 }

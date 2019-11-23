@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { useToggleModal } from "../../hooks/toggle-modal.hook";
 
 import {
   Container,
@@ -8,24 +9,28 @@ import {
   UserMsg,
   Photo
 } from "./card-msg.styles";
+import { Store } from "../../store/config/config";
+import { setTweetInformations } from "../../store/modules/modal/actions";
 
 const CardMsg = ({
   userImage,
   userScreenName,
   text,
   className,
-  setShowModal,
-  showModal
+  openModalOnClick = true
 }) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [, toggleCardModal] = useToggleModal();
+  const [, dispatch] = useContext(Store);
+
+  const dispatchTweetInformations = () =>
+    dispatch(setTweetInformations({ userImage, userScreenName, text }));
 
   return (
     <Container className={className}>
       <Card
-        // isSelected={isSelected}
         onClick={() => {
-          // setIsSelected(!isSelected);
-          setShowModal(!showModal);
+          toggleCardModal(openModalOnClick);
+          dispatchTweetInformations();
         }}
       >
         <UserPhoto>
