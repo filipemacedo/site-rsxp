@@ -73,7 +73,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   transition: all 1s;
 
   ${({ show }) => (show ? ShowStyle : HideStyle)}

@@ -7,7 +7,7 @@ export const Container = styled.div`
   // min-width: 400px;
   // height: max-content;
   // box-sizing: border-box;
-  margin: 15px 5px 5px 0px;
+  margin: 35px 5px 5px 0px;
 `;
 
 export const UserName = styled.h3`

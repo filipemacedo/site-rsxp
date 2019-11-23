@@ -26,7 +26,7 @@ export const CardGrid = styled(Masonry).attrs({
   width: 80%;
 
   .columns {
-    padding: 10px;
+    padding: 35px;
   }
 
   ${CardMsgContainer} {
