@@ -2,6 +2,13 @@ import styled from "styled-components";
 import Masonry from "react-masonry-css";
 import { Container as CardMsgContainer } from "../../components/CardMsg/card-msg.styles";
 
+const breakpointColumnsObj = {
+  default: 3,
+  1300: 2,
+  1000: 1,
+  500: 1
+};
+
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -17,7 +24,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CardGrid = styled(Masonry).attrs({
-  breakpointCols: 3,
+  breakpointCols: breakpointColumnsObj,
   columnClassName: "columns"
 })`
   display: -webkit-box; /* Not needed if autoprefixing */
