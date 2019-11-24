@@ -80,4 +80,5 @@ export const Container = styled.div`
 
 export const Modal = styled(CardMsg).attrs({ className: "selected" })`
   max-width: 75%;
+  width: max-content;
 `;

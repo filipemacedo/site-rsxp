@@ -8,7 +8,8 @@ import {
   UserPhoto,
   UserName,
   UserMsg,
-  Photo
+  Photo,
+  UserMedia
 } from "./card-msg.styles";
 
 const CardMsg = ({
@@ -37,6 +38,7 @@ const CardMsg = ({
         </UserPhoto>
         <UserName>{userScreenName}</UserName>
         <UserMsg>{text}</UserMsg>
+        <UserMedia src="./Assets/teste_.png"/>
       </Card>
     </Container>
   );

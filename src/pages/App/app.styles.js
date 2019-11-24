@@ -30,7 +30,7 @@ export const CardGrid = styled(Masonry).attrs({
   }
 
   ${CardMsgContainer} {
-    padding-left: 100px; /* gutter size */
+    padding: 0 50px; /* gutter size */
     background-clip: padding-box;
   }
 `;

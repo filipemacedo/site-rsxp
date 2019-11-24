@@ -49,6 +49,13 @@ export const UserMsg = styled.p`
   padding: 0;
 `;
 
+export const UserMedia = styled.img`
+  margin-top: 15px;
+  border-radius: 12px;
+  max-height: 350px;
+  max-width: 100%;
+`
+
 const CardSelectedStyle = ``;
 
 const CardStyle = `
