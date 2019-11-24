@@ -17,18 +17,19 @@ export default function App() {
   useOnNewTweet({ addNewTweet, tweets });
 
   const hasTweets = tweets.length;
+  const isLoading = !hasTweets || !isDisabledLoadind;
 
   return (
     <Container>
-      {!hasTweets || !isDisabledLoadind ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <>
           <CardModal />
           <Wrapper>
             <CardGrid>
-              {tweets.map((props, index) => (
-                <CardMsg {...props} index={index} />
+              {tweets.map(({ id, ...props }, index) => (
+                <CardMsg {...props} key={id} id={id} index={index} />
               ))}
             </CardGrid>
           </Wrapper>

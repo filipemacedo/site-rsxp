@@ -17,10 +17,15 @@ const CardMsg = ({
   userScreenName,
   index,
   text,
+  id,
   className,
   openModalOnClick = true
 }) => {
-  const isFinishedTime = useTimeout(200 * index);
+  const time = 300 * (index + 1);
+
+  const isFinishedTime = useTimeout(time);
+
+  console.log(id);
 
   const [, toggleCardModal] = useToggleModal();
   const [, dispatch] = useContext(Store);
@@ -30,7 +35,7 @@ const CardMsg = ({
 
   return (
     isFinishedTime && (
-      <Container className={className}>
+      <Container className={className} key={id}>
         <Card
           onClick={() => {
             toggleCardModal(openModalOnClick);
