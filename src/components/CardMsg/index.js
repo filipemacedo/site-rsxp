@@ -8,7 +8,8 @@ import {
   UserPhoto,
   UserName,
   UserMsg,
-  Photo
+  Photo,
+  UserMedia
 } from "./card-msg.styles";
 import { useTimeout } from "../../hooks/timeout.hook";
 
@@ -47,6 +48,7 @@ const CardMsg = ({
           </UserPhoto>
           <UserName>{userScreenName}</UserName>
           <UserMsg>{text}</UserMsg>
+          <UserMedia src="./Assets/teste_.png"/>
         </Card>
       </Container>
     )
