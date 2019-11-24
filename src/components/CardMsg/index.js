@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useToggleModal } from "../../hooks/toggle-modal.hook";
 import { Store } from "../../store/config/config";
 import { setTweetInformations } from "../../store/modules/modal/actions";
@@ -15,28 +15,25 @@ import { useTimeout } from "../../hooks/timeout.hook";
 
 const CardMsg = ({
   userImage,
+  image,
   userScreenName,
-  index,
   text,
-  id,
+  timeToShow,
   className,
+  id,
   openModalOnClick = true
 }) => {
-  const time = 300 * (index + 1);
-
-  const isFinishedTime = useTimeout(time);
-
-  console.log(id);
+  const isFinishedTime = useTimeout(timeToShow);
 
   const [, toggleCardModal] = useToggleModal();
   const [, dispatch] = useContext(Store);
 
   const dispatchTweetInformations = () =>
-    dispatch(setTweetInformations({ userImage, userScreenName, text }));
+    dispatch(setTweetInformations({ userImage, userScreenName, text, image }));
 
   return (
     isFinishedTime && (
-      <Container className={className} key={id}>
+      <Container className={className} isCompleted={isFinishedTime} key={id}>
         <Card
           onClick={() => {
             toggleCardModal(openModalOnClick);
@@ -48,11 +45,11 @@ const CardMsg = ({
           </UserPhoto>
           <UserName>{userScreenName}</UserName>
           <UserMsg>{text}</UserMsg>
-          <UserMedia src="./Assets/teste_.png"/>
+          <UserMedia src={image} />
         </Card>
       </Container>
     )
   );
 };
 
-export default CardMsg;
+export default React.memo(CardMsg);

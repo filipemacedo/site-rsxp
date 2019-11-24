@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 
 import { Container, Wrapper, CardGrid } from "./main.styles";
 import CardMsg from "../../components/CardMsg";
@@ -12,7 +12,7 @@ export default function App() {
   const [tweets, setTweets] = useTweets();
   const isDisabledLoadind = useTimeout(1800);
 
-  const addNewTweet = tweet => setTweets([tweet, ...tweets]);
+  const addNewTweet = tweet => setTweets([tweet, ...tweets.slice(0, 20)]);
 
   useOnNewTweet({ addNewTweet, tweets });
 
@@ -28,8 +28,8 @@ export default function App() {
           <CardModal />
           <Wrapper>
             <CardGrid>
-              {tweets.map(({ id, ...props }, index) => (
-                <CardMsg {...props} key={id} id={id} index={index} />
+              {tweets.map((props, index) => (
+                <CardMsg {...props} timeToShow={index * 200} />
               ))}
             </CardGrid>
           </Wrapper>

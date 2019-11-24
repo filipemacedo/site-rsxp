@@ -6,21 +6,12 @@ export const Container = styled.div`
   /* min-width: 400px; */
   /* height: max-content; */
   /* box-sizing: border-box; */
-  opacity: 0;
+
   width: 99%;
   margin: 35px 5px 5px 0px;
-
   animation: fade 0.3s ease forwards;
 
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
+  opacity: ${({ isCompleted }) => (isCompleted ? 1 : 0)};
 `;
 
 export const UserName = styled.h3`
@@ -55,6 +46,7 @@ export const UserPhoto = styled.div`
 export const UserMsg = styled.p`
   font-family: "Source Sans Pro";
   font-weight: 300;
+  word-wrap: break-word;
   font-size: 27px;
   line-height: 33px;
   color: #ffffff;
@@ -67,7 +59,7 @@ export const UserMedia = styled.img`
   border-radius: 12px;
   max-height: 350px;
   max-width: 100%;
-`
+`;
 
 const CardSelectedStyle = ``;
 
@@ -79,6 +71,7 @@ const CardStyle = `
 export const Card = styled.div`
   border-radius: 20px;
   position: relative;
+
   background: #252429;
   padding: 30px 70px;
   box-sizing: border-box;

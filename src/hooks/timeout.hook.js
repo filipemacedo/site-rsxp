@@ -6,7 +6,9 @@ export function useTimeout(time) {
   useEffect(() => {
     const timeout = setTimeout(() => setIsFinished(true), time);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   return isFinished;

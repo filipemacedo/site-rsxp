@@ -23,7 +23,7 @@ export function useTweets() {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
-    // fetchTweets(setTweets);
+    fetchTweets(setTweets);
   }, []);
 
   return [tweets, setTweets];
