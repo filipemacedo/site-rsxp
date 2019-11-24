@@ -1,13 +1,26 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  // position: relative;
-  // display: block;
+  /* position: relative; */
+  /* display: block; */
+  /* min-width: 400px; */
+  /* height: max-content; */
+  /* box-sizing: border-box; */
+  opacity: 0;
   width: 99%;
-  // min-width: 400px;
-  // height: max-content;
-  // box-sizing: border-box;
   margin: 35px 5px 5px 0px;
+
+  animation: fade 0.3s ease forwards;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const UserName = styled.h3`
@@ -70,6 +83,6 @@ export const Card = styled.div`
   padding: 30px 70px;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 1);
-
+  
   /* ${({ isSelected }) => (isSelected ? CardSelectedStyle : CardStyle)} */
 `;
