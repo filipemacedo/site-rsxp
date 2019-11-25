@@ -20,7 +20,6 @@ const CardMsg = ({
   text,
   timeToShow,
   className,
-  id,
   openModalOnClick = true
 }) => {
   const isFinishedTime = useTimeout(timeToShow);
@@ -33,7 +32,7 @@ const CardMsg = ({
 
   return (
     isFinishedTime && (
-      <Container className={className} isCompleted={isFinishedTime} key={id}>
+      <Container className={className} isCompleted={isFinishedTime}>
         <Card
           onClick={() => {
             toggleCardModal(openModalOnClick);
