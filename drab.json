@@ -1,8 +1,0 @@
-{
-  "extension": "js",
-  "isNative": true,
-  "components": "src/components",
-  "pages": "src/pages",
-  "services": "src/services",
-  "hooks": "src/hooks"
-}
