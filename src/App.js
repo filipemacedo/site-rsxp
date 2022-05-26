@@ -7,7 +7,7 @@ import modules from "./store/modules";
 
 export default () => {
   const store = useReducer(modules, {
-    modal: initialStateModalStore
+    modal: initialStateModalStore,
   });
 
   return (
